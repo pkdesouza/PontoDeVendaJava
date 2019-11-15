@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/AcessoAosDados/DadosLocalidade.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/AcessoAosDados/DadosProduto.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Modelos/Cliente.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/AcessoAosDados/VendaDAO.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Recursos/close.png</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Exibicao/Main.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Exibicao/PontoDeVenda.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/AcessoAosDados/ObjetoAcessoAosDados.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/BaseDeDados/BD-Creator.sql</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Modelos/Localidade.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/BaseDeDados/BD-Check.sql</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Modelos/Detalhamento.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/AcessoAosDados/ClienteDAO.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/TratamentoDeExcecoes/ProdutoInexistenteException.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Modelos/Produto.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Recursos/ok.png</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Recursos/aperto.png</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/BaseDeDados/Factory.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Modelos/Venda.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Utilitarios/Formatador.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/Modelos/Desconto.java</file>
+            <file>file:/C:/Users/Igor%20Matheus/Desktop/APS---DB-master/APS---DB-master/src/pontoDeVenda/TratamentoDeExcecoes/OutOFStockException.java</file>
+        </group>
+    </open-files>
+</project-private>
