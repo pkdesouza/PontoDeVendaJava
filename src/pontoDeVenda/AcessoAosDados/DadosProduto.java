@@ -23,7 +23,7 @@ public class DadosProduto implements ObjetoAcessoAosDados<Produto> {
 
         try {
             String consulta = "SELECT * FROM produto WHERE codprod = ?";
-            conexao = Factory.getConnection();
+            conexao = Factory.obterConexao();
             conexao.setAutoCommit(false);
             PreparedStatement ps = conexao.prepareStatement(consulta);
             ps.setInt(1, id);
@@ -62,7 +62,7 @@ public class DadosProduto implements ObjetoAcessoAosDados<Produto> {
             String consulta = "SELECT * FROM localidade";
             List<Produto> produtos = new ArrayList<>();
             List<Localidade> localidades = new ArrayList<>();
-            conexao = Factory.getConnection();
+            conexao = Factory.obterConexao();
             conexao.setAutoCommit(false);
             PreparedStatement ps = conexao.prepareStatement(consulta);
             ResultSet rs = ps.executeQuery();
@@ -80,7 +80,7 @@ public class DadosProduto implements ObjetoAcessoAosDados<Produto> {
             conexao.commit();
             return produtos;
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DadosCliente.class.getName()).log(Level.SEVERE, null, ex);
             conexao.rollback();
         }
         return null;

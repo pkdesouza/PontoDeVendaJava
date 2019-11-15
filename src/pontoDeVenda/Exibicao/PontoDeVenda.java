@@ -1,9 +1,9 @@
 package pontoDeVenda.Exibicao;
 
-import pontoDeVenda.AcessoAosDados.VendaDAO;
+import pontoDeVenda.AcessoAosDados.DadosVenda;
 import pontoDeVenda.AcessoAosDados.ObjetoAcessoAosDados;
 import pontoDeVenda.AcessoAosDados.DadosProduto;
-import pontoDeVenda.AcessoAosDados.ClienteDAO;
+import pontoDeVenda.AcessoAosDados.DadosCliente;
 import pontoDeVenda.AcessoAosDados.DadosLocalidade;
 import pontoDeVenda.Modelos.Detalhamento;
 import pontoDeVenda.Modelos.Produto;
@@ -37,7 +37,7 @@ public class PontoDeVenda extends javax.swing.JFrame {
     }
 
     private void CarregarClientes() {
-        objetoTransferenciaDados = new ClienteDAO();
+        objetoTransferenciaDados = new DadosCliente();
         List<Cliente> clientes = new ArrayList<>();
         try {
             clientes = objetoTransferenciaDados.ObterTodosItens();
@@ -45,9 +45,9 @@ public class PontoDeVenda extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro desconhecido, contate a T.I: \n" + ex.toString());
         }
         String nomes[] = new String[clientes.size() + 1];
-        nomes[0] = "Selecione um ";
+        nomes[0] = "Selecione um";
         for (int i = 0; i < nomes.length - 1; i++) {
-            nomes[i + 1] = clientes.get(i).getNome() + " - " + clientes.get(i).getCodCli();
+            nomes[i + 1] = clientes.get(i).obterNome() + " - " + clientes.get(i).obterCodigoCliente();
         }
         jComboBoxCliente.setModel(new DefaultComboBoxModel<>(nomes));
     }
@@ -176,7 +176,7 @@ public class PontoDeVenda extends javax.swing.JFrame {
             }
         });
 
-        jButtonVender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pdv/resources/imgs/ok.png"))); // NOI18N
+        jButtonVender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontoDeVenda/Recursos/ok.png"))); // NOI18N
         jButtonVender.setText("Vender");
         jButtonVender.setToolTipText("Preencha os dados antes de prosseguir!");
         jButtonVender.setEnabled(false);
@@ -186,7 +186,7 @@ public class PontoDeVenda extends javax.swing.JFrame {
             }
         });
 
-        jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pdv/resources/imgs/close.png"))); // NOI18N
+        jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontoDeVenda/Recursos/close.png"))); // NOI18N
         jButtonExcluir.setText("Excluir");
         jButtonExcluir.setToolTipText("Selecione um item da tabela antes de excluir");
         jButtonExcluir.setEnabled(false);
@@ -230,7 +230,7 @@ public class PontoDeVenda extends javax.swing.JFrame {
         jTextFieldTotalCompra.setEditable(false);
         jTextFieldTotalCompra.setText("0");
 
-        jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pdv/resources/imgs/aperto.png"))); // NOI18N
+        jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontoDeVenda/Recursos/aperto.png"))); // NOI18N
         jButtonFechar.setText("Fechar");
         jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,15 +301,15 @@ public class PontoDeVenda extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
                     .addComponent(jButtonVender))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonExcluir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonExcluir)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBoxProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(65, 65, 65)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -319,7 +319,7 @@ public class PontoDeVenda extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextFieldTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonFechar)
                 .addContainerGap())
         );
@@ -381,15 +381,15 @@ public class PontoDeVenda extends javax.swing.JFrame {
             if (quantidade <= 0) {
                 JOptionPane.showMessageDialog(null, "Quantidade insira uma quantidade igual ou maior que 1 (um)");
             } else {
-                objetoTransferenciaDados = new ClienteDAO();
+                objetoTransferenciaDados = new DadosCliente();
                 cliente = (Cliente) objetoTransferenciaDados.ObterPeloIdentificador(getCod(jComboBoxCliente.getSelectedItem().toString()));
 
                 objetoTransferenciaDados = new DadosLocalidade();
                 localidade = (Localidade) objetoTransferenciaDados.ObterPeloIdentificador(getCod(jComboBoxLocal.getSelectedItem().toString()));
 
-                VendaDAO vendaDAO = new VendaDAO();
+                DadosVenda vendaDAO = new DadosVenda();
 
-                detalhamento = vendaDAO.incluirVenda(cliente.getCodCli(), localidade.ObterIdentificadorLocalidade(),
+                detalhamento = vendaDAO.incluirVenda(cliente.obterCodigoCliente(), localidade.ObterIdentificadorLocalidade(),
                         produto.getCodProd(), quantidade);
                 atualizarLista(false);
                 atualizarTotal(detalhamento.getValorTotal(), false);
@@ -406,14 +406,14 @@ public class PontoDeVenda extends javax.swing.JFrame {
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
         try {
-            objetoTransferenciaDados = new ClienteDAO();
+            objetoTransferenciaDados = new DadosCliente();
             cliente = (Cliente) objetoTransferenciaDados.ObterPeloIdentificador(getCod(jComboBoxCliente.getSelectedItem().toString()));
 
             objetoTransferenciaDados = new DadosLocalidade();
 
-            VendaDAO vendaDAO = new VendaDAO();
+            DadosVenda vendaDAO = new DadosVenda();
 
-            vendaDAO.deletarVenda(cliente.getCodCli(), produtoSelecionadoParaExclusao.getCodProd(),
+            vendaDAO.deletarVenda(cliente.obterCodigoCliente(), produtoSelecionadoParaExclusao.getCodProd(),
                     localidade.ObterIdentificadorLocalidade(), LocalDate.now());
             Double valor = atualizarLista(true);
             atualizarTotal(valor, true);

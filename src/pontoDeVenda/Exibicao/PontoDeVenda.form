@@ -135,16 +135,17 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBoxProduto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonVender" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButtonExcluir" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButtonExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Component id="jComboBoxProduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jTextFieldDesc" min="-2" max="-2" attributes="0"/>
@@ -155,7 +156,7 @@
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldTotalCompra" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButtonFechar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -287,7 +288,7 @@
         <Component class="javax.swing.JButton" name="jButtonVender">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/pdv/resources/imgs/ok.png"/>
+              <Image iconType="3" name="/pontoDeVenda/Recursos/ok.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Vender"/>
             <Property name="toolTipText" type="java.lang.String" value="Preencha os dados antes de prosseguir!"/>
@@ -300,7 +301,7 @@
         <Component class="javax.swing.JButton" name="jButtonExcluir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/pdv/resources/imgs/close.png"/>
+              <Image iconType="3" name="/pontoDeVenda/Recursos/close.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Excluir"/>
             <Property name="toolTipText" type="java.lang.String" value="Selecione um item da tabela antes de excluir"/>
@@ -368,7 +369,7 @@
         <Component class="javax.swing.JButton" name="jButtonFechar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/pdv/resources/imgs/aperto.png"/>
+              <Image iconType="3" name="/pontoDeVenda/Recursos/aperto.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Fechar"/>
           </Properties>

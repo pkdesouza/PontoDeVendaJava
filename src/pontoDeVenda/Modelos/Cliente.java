@@ -7,7 +7,7 @@ public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer codCli;
+    private Integer codigoCliente;
     private String nome;
     private Long bonus;
     private Character perfil;
@@ -17,57 +17,57 @@ public class Cliente implements Serializable {
     }
 
     public Cliente(Integer codCli, String nome, Long bonus, Character perfil, Character condicao) {
-        this.codCli = codCli;
+        this.codigoCliente = codCli;
         this.nome = nome;
         this.bonus = bonus;
         this.perfil = perfil;
         this.condicao = condicao;
     }
 
-    public Integer getCodCli() {
-        return codCli;
+    public Integer obterCodigoCliente() {
+        return codigoCliente;
     }
 
-    public void setCodCli(Integer codCli) {
-        this.codCli = codCli;
+    public void configurarCodigoCliente(Integer codCli) {
+        this.codigoCliente = codCli;
     }
 
-    public String getNome() {
+    public String obterNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void configurarNome(String nome) {
         this.nome = nome;
     }
 
-    public Long getBonus() {
+    public Long obterBonus() {
         return bonus;
     }
 
-    public void setBonus(Long bonus) {
+    public void configurarBonus(Long bonus) {
         this.bonus = bonus;
     }
 
-    public Character getPerfil() {
+    public Character obterPerfil() {
         return perfil;
     }
 
-    public void setPerfil(Character perfil) {
+    public void configurarPerfil(Character perfil) {
         this.perfil = perfil;
     }
 
-    public Character getCondicao() {
+    public Character obterCondicao() {
         return condicao;
     }
 
-    public void setCondicao(Character condicao) {
+    public void configurarCondicao(Character condicao) {
         this.condicao = condicao;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.codCli);
+        hash = 29 * hash + Objects.hashCode(this.codigoCliente);
         return hash;
     }
 
@@ -76,23 +76,17 @@ public class Cliente implements Serializable {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
         final Cliente other = (Cliente) obj;
-        if (!Objects.equals(this.codCli, other.codCli)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.codigoCliente, other.codigoCliente);
     }
 
     @Override
     public String toString() {
         return "Cliente " + nome + "\n"
-                + "Código: " + codCli + "\n"
+                + "Código: " + codigoCliente + "\n"
                 + "Bónus atual: " + bonus + "\n"
                 + "Perfil: " + perfil + "\n"
                 + "Condição: " + (condicao == 'A' ? "Ativo" : "Inativo") + "\n";

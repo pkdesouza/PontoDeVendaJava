@@ -1,7 +1,7 @@
 package pontoDeVenda.AcessoAosDados;
 
 import pontoDeVenda.BaseDeDados.Factory;
-import pontoDeVenda.Modelos.Localidade;
+import pontoDeVenda.Modelos.Cliente;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,30 +9,31 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class DadosLocalidade implements ObjetoAcessoAosDados<Localidade> {
+public class DadosCliente implements ObjetoAcessoAosDados<Cliente> {
 
     private Connection conexao;
 
     @Override
-    public Localidade ObterPeloIdentificador(Integer id) throws SQLException {
+    public Cliente ObterPeloIdentificador(Integer id) throws SQLException {
         try {
-            String consulta = "SELECT * FROM localidade WHERE codlocal = ?";
+            String consulta = "SELECT * FROM cliente WHERE codcli = ?";
             conexao = Factory.obterConexao();
             conexao.setAutoCommit(false);
             PreparedStatement ps = conexao.prepareStatement(consulta);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             rs.first();
-            Localidade localidade = new Localidade(
-                    rs.getInt("codlocal"), 
+            Cliente cliente = new Cliente(
+                    rs.getInt("codcli"), 
                     rs.getString("nome"), 
-                    rs.getString("endereco"), 
-                    rs.getString("telefone")
+                    rs.getLong("bonus"),
+                    rs.getString("perfil").charAt(0),
+                    rs.getString("condicao").charAt(0)
             );
             conexao.commit();
-            return localidade;
+            return cliente;
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "localidade não encontrado ! \n" + ex.getMessage(), "localidade inválido", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado! " + ex.getMessage(), "Cliente inválido", JOptionPane.ERROR_MESSAGE);
             conexao.rollback();
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -42,27 +43,29 @@ public class DadosLocalidade implements ObjetoAcessoAosDados<Localidade> {
     }
 
     @Override
-    public List<Localidade> ObterTodosItens() throws SQLException {
+    public List<Cliente> ObterTodosItens() throws SQLException {
+
         try {
-            String consulta = "SELECT * FROM localidade";
-            List<Localidade> localidades = new ArrayList<>();
+            String consulta = "SELECT * FROM cliente";
+            List<Cliente> clientes = new ArrayList<>();
             conexao = Factory.obterConexao();
             conexao.setAutoCommit(false);
             PreparedStatement ps = conexao.prepareStatement(consulta);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                localidades.add(new Localidade(
-                        rs.getInt("codlocal"), 
+                clientes.add(new Cliente(
+                        rs.getInt("codcli"), 
                         rs.getString("nome"), 
-                        rs.getString("endereco"), 
-                        rs.getString("telefone")
+                        rs.getLong("bonus"),
+                        rs.getString("perfil").charAt(0), 
+                        rs.getString("condicao").charAt(0)
                 ));
             }
             conexao.commit();
-            return localidades;
+            return clientes;
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(DadosLocalidade.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DadosCliente.class.getName()).log(Level.SEVERE, null, ex);
             conexao.rollback();
         }
         return new ArrayList<>();
