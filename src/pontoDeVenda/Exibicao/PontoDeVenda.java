@@ -230,7 +230,7 @@ public class PontoDeVenda extends javax.swing.JFrame {
         jTextFieldTotalCompra.setEditable(false);
         jTextFieldTotalCompra.setText("0");
 
-        jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontoDeVenda/Recursos/aperto.png"))); // NOI18N
+        jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontoDeVenda/Recursos/close.png"))); // NOI18N
         jButtonFechar.setText("Fechar");
         jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -304,11 +304,11 @@ public class PontoDeVenda extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jButtonVender))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonExcluir)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jComboBoxProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextFieldQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonExcluir))
                 .addGap(65, 65, 65)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
